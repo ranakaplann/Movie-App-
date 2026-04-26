@@ -25,11 +25,11 @@ function Home() {
         loadPopularMovies()
     }, [])
 
-    const handleSearch = async (e) => {
+    const handleSearch = async(e) => {
         e.preventDefault()
         if (!searchQuery.trim()) return 
         if(loading) return
-
+        
         setLoading(true)
         try{
             const searchResults = await searchMovies(searchQuery)

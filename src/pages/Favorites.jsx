@@ -5,14 +5,13 @@ import MovieCard from "../components/MovieCard";
 function Favorite() {
     const { favorites } = useMovieContext();
 
-    if (favorites) {
+    if (favorites.length > 0) {
         return (
             <div className="favorites">
                 <h2>Your Favorites</h2>
                 <div className="movies-grid">
                     {favorites.map((movie) =>
-                        movie.title.toLowerCase().startsWith(searchQuery) && (
-                            <MovieCard movie={movie} key={movie.id} />)
+                        (<MovieCard movie={movie} key={movie.id} />)
                     )}
                 </div>
             </div>
