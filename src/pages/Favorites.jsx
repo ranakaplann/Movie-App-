@@ -5,6 +5,15 @@ import MovieCard from "../components/MovieCard";
 function Favorite() {
     const { favorites } = useMovieContext();
 
+    if (favorites.length === 0) {
+        return (
+            <div className="favorites-empty">
+                <h2>Your Favorites</h2>
+                <h3>You have no favorite movies yet. Start adding some!</h3>
+            </div>
+        );
+    }
+
     if (favorites.length > 0) {
         return (
             <div className="favorites">
